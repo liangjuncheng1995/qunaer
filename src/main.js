@@ -3,10 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import fastClick from 'fastclick'
-import './assets/styles/reset.css'
-import './assets/styles/border.css'
-import vConsole from '@/assets/js/vconsole.js'
+import 'styles/reset.css'
+import 'styles/border.css'
+import 'styles/iconfont.css'
+// import vConsole from '@/assets/js/vconsole.js'
 import common from '@/assets/js/common.js'
+
+import router from './router'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
@@ -16,6 +19,7 @@ Vue.prototype.common = common
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  router,
   components: { App },
   template: '<App/>'
 })
