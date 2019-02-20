@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-      <li class="item" v-for="item of recommentList" :key="item.id">
+      <li class="item" v-for="item of list" :key="item.id">
         <div class="item-img-wrapper">
           <img
             class="item-img"
@@ -23,41 +23,8 @@
 <script type="text/javascript">
 export default {
   name: "HomeWeekend",
-  data() {
-    return {
-      recommentList: [
-        {
-          id: "001",
-          imgUrl: "http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg",
-          title: '我是标题',
-          desc: '我是描述'
-        },
-        {
-          id: "002",
-          imgUrl: "http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg",
-          title: '我是标题',
-          desc: '我是描述'
-        },
-        {
-          id: "003",
-          imgUrl: "http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg",
-          title: '我是标题',
-          desc: '我是描述'
-        },
-        {
-          id: "004",
-          imgUrl: "http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg",
-          title: '我是标题',
-          desc: '我是描述'
-        },
-        {
-          id: "005",
-          imgUrl: "http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg",
-          title: '我是标题',
-          desc: '我是描述'
-        },
-      ]
-    };
+  props: {
+    list: Array
   }
 };
 </script>
@@ -67,7 +34,6 @@ export default {
 @import '~styles/mixins.styl';
 
 .title {
-  margin-top: 0.2rem;
   line-height: 0.8rem;
   background: #eee;
   text-indent: 0.2rem;
@@ -76,7 +42,7 @@ export default {
 .item-img-wrapper {
     height: 0;
     overflow: hidden;
-    padding-bottom: 33.9%;
+    padding-bottom: 37.09%;
     .item-img {
         width: 100%;
     }

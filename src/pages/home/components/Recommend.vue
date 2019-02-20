@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item" v-for="item of recommentList" :key="item.id">
+      <li class="item" v-for="item of list" :key="item.id">
         <div class="item-img-wrapper">
           <img
             class="item-img"
@@ -24,42 +24,9 @@
 <script type="text/javascript">
 export default {
   name: "Recommennd",
-  data() {
-    return {
-      recommentList: [
-        {
-          id: "001",
-          imgUrl: "https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/38cd7a459e6d92cc4d87629645ac81fb_78_59.jpg",
-          title: '我是标题',
-          desc: '我是描述'
-        },
-        {
-          id: "002",
-          imgUrl: "https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/38cd7a459e6d92cc4d87629645ac81fb_78_59.jpg",
-          title: '我是标题',
-          desc: '我是描述'
-        },
-        {
-          id: "003",
-          imgUrl: "https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/38cd7a459e6d92cc4d87629645ac81fb_78_59.jpg",
-          title: '我是标题',
-          desc: '我是描述'
-        },
-        {
-          id: "004",
-          imgUrl: "https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/38cd7a459e6d92cc4d87629645ac81fb_78_59.jpg",
-          title: '我是标题',
-          desc: '我是描述'
-        },
-        {
-          id: "005",
-          imgUrl: "https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/38cd7a459e6d92cc4d87629645ac81fb_78_59.jpg",
-          title: '我是标题',
-          desc: '我是描述'
-        },
-      ]
-    };
-  }
+  props: {
+    list: Array
+  },
 };
 </script>
 
