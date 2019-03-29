@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/home/Home'
-import List from '@/pages/list/List'
+import City from '@/pages/city/City'
 
 Vue.use(Router)
 
@@ -13,9 +13,9 @@ export default new Router({
         component : Home   // Home是组件的名字，这个路由对应跳转到的组件。。注意component没有加“s”.
     },
     {
-        path : '/list',
-        name : 'List',
-        component :  List
+        path : '/city',
+        name : 'City',
+        component :  City
     }
 	],
 })
