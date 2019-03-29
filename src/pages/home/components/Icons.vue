@@ -38,7 +38,10 @@ export default {
     pages() {
       const pages = [];
       this.list.forEach((item, index) => {
+        console.log(index)
         const page = Math.floor(index / 8);
+        console.log(item)
+        console.log(page)
         if (!pages[page]) {
           pages[page] = [];
         }
