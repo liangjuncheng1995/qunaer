@@ -78,11 +78,16 @@ export default {
 			const pages = []
 			this.iconsList.forEach((item,index) => {
 				const page = Math.floor(index / 8) 
+				console.log(page)
+				console.log(pages[page])
+				//一维数组拆分成二维数组的方法
 				if(!pages[page]) {
+					// 初始化二维数组的时候的第0,0元素和0,1的数据必须初始化
 					pages[page] = []
 				}
 				pages[page].push(item)
 			})
+			console.log(pages)
 			return pages
 		}
 	},
