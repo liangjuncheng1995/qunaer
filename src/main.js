@@ -27,3 +27,5 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+// 路由就是根据网址的不同，返回不用的内容给用户

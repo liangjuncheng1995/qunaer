@@ -26,6 +26,10 @@ export default {
 </script>
 
 <style lang="stylus" scoped="">
+//   1rem = html font-size = 50px
+//   43*2 = 86
+//   86/100 = 0.86rem
+ 
   @import '~styles/varibles.styl'
   .header{
   	display:flex;

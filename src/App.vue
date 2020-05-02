@@ -1,9 +1,10 @@
 <template>
   <div id="app">
   	<router-view/>
+    <!-- router-view 显示的是当前路由地址所对应的内通容 -->
   	<!-- <router-link to='/list'>list</router-link> -->
   </div>
-</template>
+</template> 
 
 <script>
 
