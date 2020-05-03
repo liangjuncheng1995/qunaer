@@ -39,6 +39,7 @@ export default {
     this.startY = this.$refs["A"][0].offsetTop; //a字母距离父元素的距离
   },
   methods: {
+    
     handleLetterClick(e) {
       this.$emit("change", e.target.innerText);
     },
