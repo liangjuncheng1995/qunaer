@@ -9,7 +9,7 @@
     </div>
     <router-link to="/city">
       <div class="header-right">
-        {{doubleCity}}
+        {{city}}
         <span class="iconfont arrow-icon">&#xe64a;</span>
       </div>
     </router-link>
@@ -22,7 +22,7 @@ export default {
   name: "Home",
   computed: {
 	  ...mapState(['city']),
-	  ...mapGetters(['doubleCity'])
+	//   ...mapGetters(['doubleCity'])
   }
 };
 </script>
