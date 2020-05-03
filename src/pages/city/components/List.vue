@@ -37,12 +37,12 @@ export default {
   name: "CityList",
   props: {
     hotCities: Array,
-    cities: Array
+    cities: Object
   },
   mounted() {
-    this.$nextTick(() => {
+    setTimeout(() => {
       this.scroll = new Bscroll(this.$refs.wrapper);
-    });
+    }, 200);
   }
 };
 </script>
