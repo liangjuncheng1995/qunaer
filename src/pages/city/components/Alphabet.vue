@@ -1,23 +1,20 @@
 <template>
   <ul class="list">
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
+    <li class="item" :key="key" v-for="(item, key) of cities">{{key}}</li>
   </ul>
 </template>
 
 <script type="text/javascript">
 export default {
-  name: "CityAlphabet"
+  name: "CityAlphabet",
+  props: {
+    cities: Object
+  }
 };
 </script>
 
 <style lang="stylus" scoped="">
 @import '~styles/varibles.styl';
-
-
 
 .list {
   display: flex;
