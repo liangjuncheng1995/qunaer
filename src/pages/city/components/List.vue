@@ -4,9 +4,9 @@
       <div class="area">
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
-          <!-- <div class="button-wrapper" v-for="item of hot" :key="item.id">
-            <div class="button">{{item.name}}</div>
-          </div>-->
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
         </div>
       </div>
       <div class="area">
@@ -17,7 +17,7 @@
           </div>
         </div>
       </div>
-      <div class="area" :key="key" v-for="(item, key)  of cities">
+      <div class="area" :ref="key" :key="key" v-for="(item, key)  of cities">
         <div class="title border-topbottom">{{key}}</div>
         <div class="item-list">
           <div
@@ -37,12 +37,21 @@ export default {
   name: "CityList",
   props: {
     hotCities: Array,
-    cities: Object
+    cities: Object,
+    letter: String
   },
   mounted() {
     setTimeout(() => {
       this.scroll = new Bscroll(this.$refs.wrapper);
     }, 200);
+  },
+  watch: {
+    letter() {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0];
+        this.scroll.scrollToElement(element);
+      }
+    }
   }
 };
 </script>
