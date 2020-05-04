@@ -1,24 +1,24 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img
-        class="banner-img"
-        :src="bannerImg"
-        alt
-      />
+      <img class="banner-img" :src="bannerImg" alt />
       <div class="banner-info">
         <div class="banner-title">{{sightName}}</div>
         <div class="banner-number">
-          <span class="iconfont tupian-icon">&#xe604;</span>{{gallaryImgs.length}}
+          <span class="iconfont tupian-icon">&#xe604;</span>
+          {{gallaryImgs.length}}
         </div>
       </div>
     </div>
-    <common-gallary @close='handlerGallaryClose' :imgs="gallaryImgs" v-show="showGallary"></common-gallary>
+    <fade-animation>
+      <common-gallary @close="handlerGallaryClose" :imgs="gallaryImgs" v-show="showGallary"></common-gallary>
+    </fade-animation>
   </div>
 </template>
 
 <script type="text/javascript">
 import CommonGallary from "@/common/gallary/Gallary.vue";
+import FadeAnimation from "common/fade/FadeAnimation.vue";
 export default {
   props: {
     sightName: String,
@@ -27,20 +27,20 @@ export default {
   },
   name: "Banner",
   components: {
-    CommonGallary
+    CommonGallary,
+    FadeAnimation
   },
   methods: {
     handleBannerClick() {
-      this.showGallary = true
+      this.showGallary = true;
     },
     handlerGallaryClose() {
-      this.showGallary = false
+      this.showGallary = false;
     }
   },
   data() {
     return {
-      showGallary: false,
-     
+      showGallary: false
     };
   }
 };
