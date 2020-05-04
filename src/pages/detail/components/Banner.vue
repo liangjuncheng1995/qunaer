@@ -3,23 +3,28 @@
     <div class="banner" @click="handleBannerClick">
       <img
         class="banner-img"
-        src="http://img1.qunarzz.com/sight/p0/2004/5b/5b3a8f986d620e5ea3.img.jpg_600x330_4a6ec5fa.jpg"
+        :src="bannerImg"
         alt
       />
       <div class="banner-info">
-        <div class="banner-title">长隆野生动物世界(AAAAA景区)</div>
+        <div class="banner-title">{{sightName}}</div>
         <div class="banner-number">
-          <span class="iconfont tupian-icon">&#xe604;</span>39
+          <span class="iconfont tupian-icon">&#xe604;</span>{{gallaryImgs.length}}
         </div>
       </div>
     </div>
-    <common-gallary @close='handlerGallaryClose' :imgs="imgs" v-show="showGallary"></common-gallary>
+    <common-gallary @close='handlerGallaryClose' :imgs="gallaryImgs" v-show="showGallary"></common-gallary>
   </div>
 </template>
 
 <script type="text/javascript">
 import CommonGallary from "@/common/gallary/Gallary.vue";
 export default {
+  props: {
+    sightName: String,
+    bannerImg: String,
+    gallaryImgs: Array
+  },
   name: "Banner",
   components: {
     CommonGallary
@@ -35,10 +40,7 @@ export default {
   data() {
     return {
       showGallary: false,
-      imgs: [
-        "https://imgs.qunarzz.com/sight/p0/1603/ee/ee3013caaa28ae7490.water.jpg_200x200_f052dfc4.jpg",
-        "https://imgs.qunarzz.com/sight/p0/1603/ee/ee3013caaa28ae7490.water.jpg_200x200_f052dfc4.jpg"
-      ]
+     
     };
   }
 };

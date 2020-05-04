@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <keep-alive>
+    <keep-alive exclude="detail">
       <router-view />
     </keep-alive>
     <!-- router-view 显示的是当前路由地址所对应的内通容 -->
