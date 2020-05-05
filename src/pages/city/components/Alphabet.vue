@@ -3,7 +3,7 @@
     <li
       @touchmove="handleTouchMove"
       @touchend="handleTouchEnd"
-      @touchstart="handleTouchStart"
+      @touchstart.prevent="handleTouchStart"
       @click="handleLetterClick"
       class="item"
       :key="item"
